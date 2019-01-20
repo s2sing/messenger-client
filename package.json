@@ -1,0 +1,12 @@
+{
+  "name": "messenger-client",
+  "version": "1.0.0",
+  "main": "index.html",
+  "scripts": {
+    "serve": "nw .",
+    "build": "nwb nwbuild -v 0.35.5-sdk -p win64 ."
+  },
+  "dependencies": {
+    "nwjs": "^1.4.4"
+  }
+}
