@@ -1,0 +1,11 @@
+html {height: 100%;overflow: hidden;font-family: 'Nanum Gothic'}
+body {margin: 0;}
+.toolbar {background: #34bc91;}
+.toolbar .logo {color: white; font-weight: bold;}
+.icon-button {color: white; -webkit-app-region: no-drag; padding: 2px;-webkit-user-select: none; border-radius: 3px;}
+.icon-button:hover {-webkit-transform: scale(1.2); cursor: pointer; background: #3ead88;}
+.icon-button:active {-webkit-transform: scale(1.2); cursor: pointer; background: #359374;}
+.cmd-button {background: #34bc91;border: none;color: white;padding: 7px 12px;min-width: 80px;font-weight: bold;}
+.cmd-button:focus {outline: 0;}
+.cmd-button:hover {cursor: pointer; background: #3ead88;}
+.cmd-button:active {cursor: pointer; background: #359374;}
