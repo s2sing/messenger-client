@@ -2,15 +2,35 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>변경 전 버전</title>
-    <script src="jquery-3.3.1.min.js"></script>
+    <title>메신저</title>
+    <link rel="stylesheet" href="resources/bootstrap-3.3.2/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="resources/bootstrap-3.3.2/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="resources/css/style.css"/>
+    <link rel="stylesheet" href="resources/css/font.css"/>
+    <script src="resources/js/jquery-3.3.1.min.js"></script>
+    <script src="resources/bootstrap-3.3.2/js/bootstrap.min.js"></script>
     <script src="components/Global.js"></script>
+    <script src="components/Window.js"></script>
+    <script src="components/Tray.js"></script>
     <script src="components/Patch.js"></script>
+    <script src="components/Login.js"></script>
 </head>
 <body>
-<button onclick="Patch.prototype.versionCheck()">버전체크</button>
+<div class="toolbar" style="height: 50px;padding: 16px;-webkit-app-region: drag;">
+    <div style="float:left">
+        <span class="logo">프로토타입 메신저 - <span class="version"></span></span>
+    </div>
+    <div style="float:right">
+        <span id="btn-minimize" class="glyphicon glyphicon-minus icon-button" aria-hidden="true"></span>
+        <span id="btn-maximize" class="glyphicon glyphicon-stop icon-button" style="margin-left:10px"
+              aria-hidden="true"></span>
+        <span id="btn-close" class="glyphicon glyphicon-remove icon-button" style="margin-left:10px"
+              aria-hidden="true"></span>
+    </div>
+</div>
+<div id="app"></div>
 </body>
 </html>
 <script>
-    console.log("로드");
+  Login.prototype.render(document.getElementById('app'));
 </script>
