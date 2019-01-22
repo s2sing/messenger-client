@@ -13,6 +13,7 @@ $(function () {
 
   $("#btn-close").on('click', function () {
     win.hide();
+    nw.App.quit();
   });
 
   win.on('restore', function(){

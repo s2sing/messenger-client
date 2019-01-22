@@ -2,11 +2,11 @@ function Login() {
 }
 
 Login.prototype.render = function (dom) {
-  Patch.prototype.versionCheck();
+  Global.dom = dom;
 
   let html = "";
   html += `<div style="padding:60px 30px;">`;
-  html += `<form id="loginForm" action="${Global.host}/login" method="post">`;
+  html += `<form id="loginForm">`;
   html += `<div class="form-group">`;
   html += `<label for="username">아이디</label>`;
   html += `<div>`;
@@ -29,13 +29,17 @@ Login.prototype.render = function (dom) {
 }
 
 Login.prototype.submit = function () {
-  $.ajax({
-    url: $("#loginForm").attr('action'),
-    method: $("#loginForm").attr('method'),
-    data: $("#loginForm").serialize(),
-    async: false
-  })
-    .done((res) => {
-
+  Patch.prototype.versionUpdate().then((result) => {
+    $.ajax({
+      url: Global.host + '/login',
+      method: 'post',
+      data: $("#loginForm").serialize()
+    }).done((res) => {
+      if (res.result) {
+        WaitingRoom.prototype.render(Global.dom);
+      }
     });
+  }).catch((msg) => {
+    alert(msg);
+  });
 }
